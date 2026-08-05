@@ -1,4 +1,6 @@
 import pygame
+from pygame import surface
+
 import textbox
 import sys  # Wichtig für sys.exit()
 
@@ -17,10 +19,18 @@ img2 = pygame.image.load("media/character/arsen/Arsen happy.png").convert_alpha(
 img3 = pygame.image.load("media/character/arsen/Arsen sad.png").convert_alpha()
 img4 = pygame.image.load("media/character/arsen/Arsen speaking.png").convert_alpha()
 background = pygame.image.load("media/background/digilabbackground.jpg").convert_alpha()
+textbocks = pygame.image.load("media/textbox/Textbox.png").convert_alpha()
     #img = pygame.transform.scale(img, (70, 100))
 
 
 textbox2 = textbox.TextBox((100, 500, 1000, 200))#x, y, width height
+#textbox2.set_colorkey((255, 0, 255))
+
+#transparent_surface = pygame.Surface((200, 200))
+#transparent_surface.fill((255, 0, 255))
+
+#trying out transparency: https://www.pythontutorials.net/blog/how-to-make-a-surface-with-a-transparent-background-in-pygame/
+textbox2.background_colour = (255, 0, 255)
 
 textbox2.text = "Welcome to Digi Lab."
 
@@ -49,6 +59,7 @@ while running:
         textbox2.test_collide(event)
     screen.blit(background, (0, 0))
     screen.blit(bildneutral, (0, 0))
+    screen.blit(textbocks, (0, 0))
     #textbox1.draw(textbox1.text, screen)
     textbox2.draw(textbox2.text, screen)
     pygame.display.flip()
