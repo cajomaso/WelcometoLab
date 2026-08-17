@@ -1,6 +1,8 @@
 import pygame
 from pygame import surface
 
+from time import strftime
+
 import textbox
 import sys  # Wichtig für sys.exit()
 
@@ -30,10 +32,12 @@ textbocks = pygame.image.load("media/textbox/Textbox.png").convert_alpha()
 text1 = 'Willkommen'
 text2 = 'Im Digi Lab'
 font = pygame.font.SysFont(None, 30)
+clock_font = pygame.font.SysFont(None, 50)
 line1 = font.render( text1, True,0)
 line2 = font.render( text2, True,0)
 line3 = font.render( text1, True,0)
 line4 = font.render( text1, True,0)
+
 
 
 textbox2 = textbox.TextBox((100, 500, 1000, 200))#x, y, width height
@@ -49,10 +53,25 @@ textbox2.text = "Welcome to Digi Lab."
 
 def text():
     screen.blit(textbocks, (0, 0))
-    screen.blit(line1, (300, 560))
-    screen.blit(line2, (300, 580))
-    screen.blit(line3, (300, 600))
-    screen.blit(line4, (300, 620))
+    screen.blit(line1, (300, 585))
+    screen.blit(line2, (300, 615))
+    screen.blit(line3, (300, 645))
+    screen.blit(line4, (300, 675))
+
+
+def draw_clock(surface):
+    time_string = strftime('%H:%M')
+    clock_text_surface = clock_font.render(time_string, True, (255, 255, 255))
+
+    margin = 20
+    text_rect = clock_text_surface.get_rect()
+    text_rect.topright = (width - margin, margin)
+
+    padding = 10
+    bg_rect = text_rect.inflate(padding * 2, padding * 2)
+    pygame.draw.rect(surface, (0, 0, 0), bg_rect, border_radius=8)
+
+    surface.blit(clock_text_surface, text_rect)
 
 clock = pygame.time.Clock()
 
@@ -83,6 +102,8 @@ while running:
     #textbox1.draw(textbox1.text, screen)
     #textbox2.draw(textbox2.text, screen)
     text()
+
+    draw_clock(screen)
 
     pygame.display.flip()
     clock.tick(60)
