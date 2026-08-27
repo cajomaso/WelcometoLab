@@ -1,3 +1,4 @@
+'''
 #source: https://handhikayp.medium.com/generate-a-simple-digital-clock-with-python-tkinter-796a5b298872
 
 import tkinter as tk
@@ -24,4 +25,7 @@ update_time()
 root.mainloop()
 
 #source: https://docs.python.org/3/library/time.html#time.localtime
+'''
+
+
 
