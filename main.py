@@ -3,7 +3,7 @@ from pygame import surface
 
 from time import strftime
 
-import textbox
+import hitbox
 import sys  # Wichtig für sys.exit()
 
 pygame.init()
@@ -15,10 +15,6 @@ screen = pygame.display.set_mode((width, height))
 
 pygame.display.set_caption('Digi Lab')
 
-transparent_surface = pygame.Surface((200, 200))
-transparent_surface.fill((255, 0, 255))
-
-transparent_surface.set_colorkey((255, 0, 255))
 
 
 bildneutral = pygame.image.load("media/character/arsen/Arsen neutral.png").convert_alpha()
@@ -43,11 +39,12 @@ line4 = font.render( text1, True,0)
 
 
 
-hitbox = textbox.TextBox((100, 500, 1000, 200))#x, y, width height
+hitbox = hitbox.HitBox((75, 370, 150, 200))#x, y, width height
 
-hitbox.background_colour = (255, 0, 255)
+hitbox.background_colour = (255, 0, 255) #color and hitbox will be hidden by another picture being above it
 
-hitbox.text = "Welcome to Digi Lab."
+
+hitbox.text = "Here will sit a character"
 
 def text():
     screen.blit(textbocks, (0, 0))

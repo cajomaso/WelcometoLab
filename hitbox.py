@@ -3,7 +3,7 @@ pygame.init()
 pygame.font.init()
 
 
-class TextBox(object):
+class HitBox(object):
     def __init__(self, rect=None, text="", background_colour=(222, 222, 222), text_colour=(0, 0, 0), font="Arial",
                  font_size=20):
         # If no rectangle is specified, then a default one is chosen
@@ -35,6 +35,9 @@ class TextBox(object):
         if event.type == pygame.MOUSEBUTTONDOWN and self.rect.collidepoint(event.pos):
             self.active = True
             self.background_colour = (128, 128, 128)
+            #Here I will add the interactions later, might need to rewrite this code.
+
+
         elif event.type == pygame.MOUSEBUTTONDOWN and not self.rect.collidepoint(event.pos):
             self.active = False
             self.background_colour = (222, 222, 222)
