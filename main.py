@@ -24,7 +24,9 @@ bildneutral = pygame.image.load("media/characters/arno/arno_neutral.png").conver
 img2 = pygame.image.load("media/characters/arno/Arsen happy.png").convert_alpha()
 img3 = pygame.image.load("media/characters/arno/Arsen sad.png").convert_alpha()
 img4 = pygame.image.load("media/characters/arno/Arsen speaking.png").convert_alpha()
-background = pygame.image.load("media/background/digilabbackground.jpg").convert_alpha()
+#background = pygame.image.load("media/background/digilab_day.jpg").convert_alpha()
+startscreen = pygame.image.load("media/background/digilab_start.png").convert_alpha()
+startscreenbackground = pygame.image.load("media/background/digilab_start.jpg").convert_alpha()
 
 
 
@@ -54,6 +56,9 @@ hitbox.background_colour = (255, 0, 255) #color and hitbox will be hidden by ano
 
 hitbox.text = "Here will sit a character"
 
+def show_startscreen():
+    screen.blit(background, (0, 0))
+
 def text():
     screen.blit(speaking, (160,510 ))
     screen.blit(line1, (160, 555))
@@ -66,17 +71,17 @@ def text():
 def draw_clock(surface):
     time_string = strftime('%H:%M')
     clock_text_surface = clock_font.render(time_string, True, (255, 255, 255))
-
     text_rect = clock_text_surface.get_rect()
     text_rect.x = 1000
     text_rect.y = 50
-
-
     bg_rect = text_rect.inflate(30, 30)
     pygame.draw.rect(surface, (0, 0, 0), bg_rect)
-
     surface.blit(clock_text_surface, text_rect)
     #return time_string -> marker that I want to use time_string globally
+
+def show_startscreen():
+    screen.blit(startscreenbackground, (0, 0))
+    screen.blit(startscreen, (0, 0))
 
 clock = pygame.time.Clock()
 
@@ -84,6 +89,9 @@ running = True
 while running:
 
     clock.tick(60)
+
+    show_startscreen()
+    '''
 
     for event in pygame.event.get():
         # 1. PRÜFEN, OB DAS FENSTER GESCHLOSSEN WERDEN SOLL
@@ -111,9 +119,11 @@ while running:
     text()
 
     draw_clock(screen)
+    '''
 
     pygame.display.flip()
     clock.tick(60)
+
 
 # Nach der Schleife Pygame sauber beenden
 pygame.quit()
