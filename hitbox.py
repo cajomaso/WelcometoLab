@@ -1,16 +1,23 @@
 import pygame
+import imagesloaded
 pygame.init()
 pygame.font.init()
 
 
-class HitBox(object):
-    def __init__(self, rect=None, text="", background_colour=(222, 222, 222), text_colour=(0, 0, 0), font="Arial",
+screen = pygame.display.set_mode((1200, 800))
+width, height = 1200, 800
+screen = pygame.display.set_mode((width, height))
+pygame.display.set_caption('Digi Lab')
+
+
+class HitBox:
+    def __init__(self, x=0, y=0, w=400, h=25, rect = False, text="", background_colour=(222, 222, 222), text_colour=(0, 0, 0), font="uddigikyokashon",
                  font_size=20):
         # If no rectangle is specified, then a default one is chosen
-        if rect is None:
+        if rect:
             self.rect = pygame.Rect(0, 0, 400, 25)
         else:
-            self.rect = pygame.Rect(rect)
+            self.rect = pygame.Rect(x, y, w, h)
 
         # Set the options (defaults if not specified by user)
         self.text = text
@@ -41,3 +48,40 @@ class HitBox(object):
         elif event.type == pygame.MOUSEBUTTONDOWN and not self.rect.collidepoint(event.pos):
             self.active = False
             self.background_colour = (222, 222, 222)
+
+    def start_lab(self, event):
+        if event.type == pygame.MOUSEBUTTONDOWN and self.rect.collidepoint(event.pos):#showlab
+
+            screen.blit(imagesloaded.night,(0,0))
+        else:
+            pass
+
+
+class  Character (HitBox):
+
+    def __init__(self, rect=None, text="", background_colour=(222, 222, 222), text_colour=(0, 0, 0),
+                 font="uddigikyokashon",
+                 font_size=20,name="None", place="none", img= pygame.image.load("media/characters/arno/arno_defeated.png")):
+        # If no rectangle is specified, then a default one is chosen
+        if rect is None:
+            self.rect = pygame.Rect(0, 0, 400, 25)
+        else:
+            self.rect = pygame.Rect(rect)
+
+        # Set the options (defaults if not specified by user)
+        self.text = text
+        self.background_colour = background_colour
+        self.text_colour = text_colour
+        self.font_size = font_size
+        self.font = pygame.font.SysFont(font, self.font_size)
+        self.img = pygame.image.load("media/characters/arno/arno_defeated.png")
+        # Set the default state to False
+        self.active = False
+
+'''def startconvo(self, event):
+
+        if event.type == pygame.MOUSEBUTTONDOWN and self.rect.collidepoint(event.pos):#screen.blit(self.img, self.rect)
+
+        else:
+            pass'''
+

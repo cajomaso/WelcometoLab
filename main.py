@@ -4,7 +4,7 @@ from pygame import surface
 from time import strftime
 
 import hitbox
-import sys  # Wichtig für sys.exit()
+import sys
 
 pygame.init()
 
@@ -15,19 +15,17 @@ screen = pygame.display.set_mode((width, height))
 
 pygame.display.set_caption('Digi Lab')
 
+startscreen = False
+digilab = False
+
+#Achievements
+firsttimeinlab = False
+firsttimemeetingarno = False
+firsttimemeetingblob = False
+firsttimemeetingbrooke = False
+
+
 currentcharacter = "Arno" ":"
-
-
-
-
-bildneutral = pygame.image.load("media/characters/arno/arno_neutral.png").convert_alpha()
-img2 = pygame.image.load("media/characters/arno/Arsen happy.png").convert_alpha()
-img3 = pygame.image.load("media/characters/arno/Arsen sad.png").convert_alpha()
-img4 = pygame.image.load("media/characters/arno/Arsen speaking.png").convert_alpha()
-#background = pygame.image.load("media/background/digilab_day.jpg").convert_alpha()
-startscreen = pygame.image.load("media/background/digilab_start.png").convert_alpha()
-startscreenbackground = pygame.image.load("media/background/digilab_start.jpg").convert_alpha()
-
 
 
 #later in a seperate file|max 63 characters
@@ -36,7 +34,6 @@ text2 = 'Im Digi Lab'
 text3 = '123456789102345678920234567893023456789402345678950234567896023'
 
 pygame.font.get_fonts()
-
 
 font = pygame.font.SysFont("uddigikyokashon", 30)
 clock_font = pygame.font.SysFont("uddigikyokashon", 60)
@@ -50,14 +47,10 @@ line5 = font.render( text1, True,0)
 line6 = font.render( text1, True,0)
 
 hitbox = hitbox.HitBox((75, 370, 150, 200))#x, y, width height
-
 hitbox.background_colour = (255, 0, 255) #color and hitbox will be hidden by another picture being above it
-
 
 hitbox.text = "Here will sit a character"
 
-def show_startscreen():
-    screen.blit(background, (0, 0))
 
 def text():
     screen.blit(speaking, (160,510 ))
@@ -91,14 +84,14 @@ while running:
     clock.tick(60)
 
     show_startscreen()
-    '''
+
 
     for event in pygame.event.get():
         # 1. PRÜFEN, OB DAS FENSTER GESCHLOSSEN WERDEN SOLL
         if event.type == pygame.QUIT:
             running = False
 
-
+        '''
 
         if event.type == pygame.KEYDOWN:
             #if textbox1.active:
