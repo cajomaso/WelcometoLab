@@ -10,9 +10,6 @@ pygame.init()
 
 
 screen = pygame.display.set_mode((1200, 800))
-width, height = 1200, 800
-screen = pygame.display.set_mode((width, height))
-
 pygame.display.set_caption('Digi Lab')
 
 startscreen = False
@@ -25,17 +22,10 @@ firsttimemeetingblob = False
 firsttimemeetingbrooke = False
 
 
-currentcharacter = "Arno" ":"
 
 
-#later in a seperate file|max 63 characters
-text1 = 'Willkommen'
-text2 = 'Im Digi Lab'
-text3 = '123456789102345678920234567893023456789402345678950234567896023'
 
-pygame.font.get_fonts()
 
-font = pygame.font.SysFont("uddigikyokashon", 30)
 clock_font = pygame.font.SysFont("uddigikyokashon", 60)
 
 speaking = font.render( currentcharacter, True,0)

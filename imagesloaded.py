@@ -10,11 +10,11 @@ startscreenimage = pygame.image.load("media/background/start_screen.png").conver
 startscreenbackground = pygame.image.load("media/background/start_screen.jpeg").convert_alpha()
 
 #digilab
-#day
+#dayfirstlayer
 day = pygame.image.load("media/background/digilab_day.jpg").convert_alpha()
 dayrain = pygame.image.load("media/background/digilab_day_rain.jpg").convert_alpha()
 
-#night
+#nightfirstlayer
 night = pygame.image.load("media/background/digilab_night.jpg").convert_alpha()
 nightrain = pygame.image.load("media/background/digilab_night_rain.jpg").convert_alpha()
 nightoverlay = pygame.image.load("media/background/digilab_night_two.png").convert_alpha()

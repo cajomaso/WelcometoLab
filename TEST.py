@@ -12,8 +12,10 @@ pygame.init()
 
 screen = pygame.display.set_mode((1200, 800))
 width, height = 1200, 800
-screen = pygame.display.set_mode((width, height))
+
 pygame.display.set_caption('Digi Lab')
+
+
 
 
 #placechecker
@@ -39,6 +41,8 @@ play = hitbox.HitBox(500,500,400,140)
 
 clock = pygame.time.Clock()
 
+startscreen()
+
 running = True
 while running:
 
@@ -51,11 +55,13 @@ while running:
         # 1. PRÜFEN, OB DAS FENSTER GESCHLOSSEN WERDEN SOLL
         if event.type == pygame.QUIT:
             running = False
+
+
         play.draw("trying",screen)
         play.start_lab(event)
 
 #GAMECONTENT
-    show_startscreen()
+    #show_startscreen()
 
 
 
