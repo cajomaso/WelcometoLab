@@ -4,8 +4,24 @@ This is game is set in the Digital Media Lab, which is open to all Digital Media
 You are a new student visiting the Lab for the first time. In the Lab you meet other Digital Media Students from higher Semester. 
 Get to know them and their quirks. You might even trigger a special event.
 
+At the moment the game is very simple and one is able to achieve 100% within a minute.
+
 
 <img src="media/WelcometoDigiLab.png" width="300">
+
+Meet the Lab Manager!
+<img src="media/processpics/firstmeeting.png" width="300">
+
+This version of the game is the cheat version:
+
+<img src="media/processpics/Menu.png" width="300">
+
+Normally the left side of the menu would not be active. The game is supposed to be played in very short sessions, and the player should log in at different times of the day. In different seasons and maybe on days with a special occasion. 
+But the left side makes it possible to see everything the game has to offer easily.
+
+The option Reshuffle is a bit useless at the moment since there are only 3 characters you can meet.
+
+But the game is supposed to have lots of new characters later on.
 
 ---
 #### Installation

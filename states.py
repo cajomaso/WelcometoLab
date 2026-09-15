@@ -503,7 +503,7 @@ class AchievementsScreen(State):
         pygame.draw.rect(screen, COLOR_ACCENT, card, 2, border_radius=14)
 
         font_title = pygame.font.SysFont(FONT_FAMILY, 28, bold=True)
-        t_surf = font_title.render("STUDENT ACHIEVEMENTS", True, COLOR_STRONG_ACCENT)
+        t_surf = font_title.render("ACHIEVEMENTS", True, COLOR_STRONG_ACCENT)
         screen.blit(t_surf, t_surf.get_rect(center=(SCREEN_WIDTH // 2, card.y + 45)))
 
         achievements_list = [
