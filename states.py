@@ -52,12 +52,12 @@ class StartScreen(State):
 
     def boot(self):
         try:
-            self.bg_img = pygame.image.load("Tests/media/background/start_screen.jpeg").convert_alpha()
+            self.bg_img = pygame.image.load("media/background/start_screen.jpeg").convert_alpha()
         except Exception:
             self.bg_img = None
 
         try:
-            self.overlay_png = pygame.image.load("Tests/media/background/start_screen.png").convert_alpha()
+            self.overlay_png = pygame.image.load("media/background/start_screen.png").convert_alpha()
         except Exception:
             self.overlay_png = None
 
@@ -97,7 +97,7 @@ class SlotSelectionScreen(State):
 
     def boot(self):
         try:
-            self.bg_img = pygame.image.load("Tests/media/background/start_screen.jpeg").convert_alpha()
+            self.bg_img = pygame.image.load("media/background/start_screen.jpeg").convert_alpha()
         except Exception:
             self.bg_img = None
         self.selected_slot_idx = 1
@@ -204,7 +204,7 @@ class PlayerDataScreen(State):
 
     def boot(self):
         try:
-            self.bg_img = pygame.image.load("Tests/media/background/start_screen.jpeg").convert_alpha()
+            self.bg_img = pygame.image.load("media/background/start_screen.jpeg").convert_alpha()
         except Exception:
             self.bg_img = None
 
@@ -292,11 +292,11 @@ class PlayerDataScreen(State):
 
 
 class MenuScreen(State):
-    """Main Menu Screen with a clean 2-column balanced layout for settings and actions."""
+    """Main Menu Screen"""
 
     def boot(self):
         try:
-            self.bg_img = pygame.image.load("Tests/media/background/start_screen.jpeg").convert_alpha()
+            self.bg_img = pygame.image.load("media/background/start_screen.jpeg").convert_alpha()
         except Exception:
             self.bg_img = None
 
@@ -481,11 +481,11 @@ class MenuScreen(State):
 
 
 class AchievementsScreen(State):
-    """Screen displaying student achievements with real-time checkboxes."""
+    """Screen displaying student achievements with checkboxes."""
 
     def boot(self):
         try:
-            self.bg_img = pygame.image.load("Tests/media/background/start_screen.jpeg").convert_alpha()
+            self.bg_img = pygame.image.load("media/background/start_screen.jpeg").convert_alpha()
         except Exception:
             self.bg_img = None
         card_x = SCREEN_WIDTH // 2 - 320
@@ -546,7 +546,7 @@ class AchievementsScreen(State):
 
 
 class LocationScreen(State):
-    """Main lab view rendering layered environment background and character sprites."""
+    """Main Lab (Sadly old Lab)"""
 
     def boot(self):
         self.layers = {}
@@ -750,7 +750,7 @@ class LocationScreen(State):
 
 
 class DialogueScreen(State):
-    """Visual novel dialogue view displaying character emotion portraits and event sequences."""
+    """Visual Dialogue view displaying character emotion portraits and event sequences."""
 
     def boot(self):
         self.current_line_idx = 0

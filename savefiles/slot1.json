@@ -1,10 +1,13 @@
 {
-    "player_name": "Auzmuf",
-    "player_birthday": "January 15",
-    "ach_first_time": false,
-    "ach_meet_arno": false,
-    "ach_meet_blob": false,
-    "ach_meet_brooke": false,
-    "ach_birthday_at_lab": false,
-    "has_triggered_welcome": false
+    "player_name": "AELX",
+    "player_birthday": "October 22",
+    "ach_first_time": true,
+    "ach_meet_arno": true,
+    "ach_meet_blob": true,
+    "ach_meet_brooke": true,
+    "ach_birthday_at_lab": true,
+    "has_triggered_welcome": true,
+    "birthday_celebrated_dates": [
+        "October 22"
+    ]
 }

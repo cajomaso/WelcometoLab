@@ -62,8 +62,8 @@ class Game:
         self.change_state('StartScreen')
 
     def get_slot_filepath(self, slot_idx):
-        if not os.path.exists("Tests/savefiles"):
-            os.makedirs("Tests/savefiles", exist_ok=True)
+        if not os.path.exists("savefiles"):
+            os.makedirs("savefiles", exist_ok=True)
         return f"savefiles/slot{slot_idx}.json"
 
     def get_all_slot_metadata(self):
